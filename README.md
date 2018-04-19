@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/brysgo/react-transclude.svg?style=svg)](https://circleci.com/gh/brysgo/react-transclude)
+
 # React Transclude
 
 This is a POC of bringing a neat syntax from angular for including multiple
