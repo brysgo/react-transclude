@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`react-transclude makes composing children more XML-like 1`] = `
+<div>
+  <div>
+    <div>
+      this is the header
+    </div>
+  </div>
+  <div>
+    <div>
+      this is the body
+    </div>
+  </div>
+  <div>
+    <div>
+      this is the footer
+    </div>
+  </div>
+</div>
+`;
+
+exports[`react-transclude works with good old jsx props 1`] = `
+<div>
+  <div>
+    <div>
+      this is the header
+    </div>
+  </div>
+  <div>
+    <div>
+      this is the body
+    </div>
+  </div>
+  <div>
+    <div>
+      this is the footer
+    </div>
+  </div>
+</div>
+`;
