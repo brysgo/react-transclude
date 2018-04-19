@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import renderer from "react-test-renderer";
 
 import transclude from "react-transclude";
@@ -30,19 +30,15 @@ describe("react-transclude", () => {
   it("makes composing children more XML-like", () => {
     const component = renderer.create(
       <Card>
-        {({ Header, Body, Footer }) => (
-          <div>
-            <Header>
-              <div>this is the header</div>
-            </Header>
-            <Body>
-              <div>this is the body</div>
-            </Body>
-            <Footer>
-              <div>this is the footer</div>
-            </Footer>
-          </div>
-        )}
+        <Card.Header>
+          <div>this is the header</div>
+        </Card.Header>
+        <Card.Body>
+          <div>this is the body</div>
+        </Card.Body>
+        <Card.Footer>
+          <div>this is the footer</div>
+        </Card.Footer>
       </Card>
     );
     let tree = component.toJSON();

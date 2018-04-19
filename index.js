@@ -1,27 +1,15 @@
-import React, { Fragment } from "react";
-import Enzyme, { mount } from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
+import React from "react";
 
-Enzyme.configure({ adapter: new Adapter() });
-
-export default function(propNames, Component) {
-  return function(props) {
+module.exports = function(propNames, Component) {
+  const componentMap = new Map();
+  const resultComponent = function(props) {
     const transcludedContent = {};
-    const childComponents = {};
-    const propNameMap = {};
-    Object.keys(propNames).forEach(function(prop) {
-      propNameMap[propNames[prop]] = prop;
-      return (childComponents[propNames[prop]] = function(p) {
-        return p.children;
-      });
-    });
-    if (typeof props.children === "function") {
-      const wrapper = mount(props.children(childComponents));
-      Object.keys(childComponents).forEach(function(name) {
-        return (transcludedContent[propNameMap[name]] = wrapper
-          .find(childComponents[name])
-          .first()
-          .getElement());
+    if (props.children && Array.isArray(props.children)) {
+      props.children.forEach(function(child) {
+        let propName;
+        if ((propName = componentMap.get(child.type))) {
+          transcludedContent[propName] = child;
+        }
       });
     }
     return React.createElement(
@@ -29,4 +17,12 @@ export default function(propNames, Component) {
       Object.assign({}, transcludedContent, props)
     );
   };
-}
+  Object.keys(propNames).forEach(function(prop) {
+    const fn = function(p) {
+      return p.children;
+    };
+    componentMap.set(fn, prop);
+    resultComponent[propNames[prop]] = fn;
+  });
+  return resultComponent;
+};
