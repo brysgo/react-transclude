@@ -1,5 +1,42 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`react-transclude adds multiple of the same type into an array 1`] = `
+<div
+  className="App"
+>
+  <h1>
+    Accordian Example
+  </h1>
+  <div>
+    <h2>
+      Section 
+      0
+    </h2>
+    <div>
+      first section
+    </div>
+  </div>
+  <div>
+    <h2>
+      Section 
+      1
+    </h2>
+    <div>
+      second section
+    </div>
+  </div>
+  <div>
+    <h2>
+      Section 
+      2
+    </h2>
+    <div>
+      third section
+    </div>
+  </div>
+</div>
+`;
+
 exports[`react-transclude makes composing children more XML-like 1`] = `
 <div>
   <div>
@@ -8,9 +45,11 @@ exports[`react-transclude makes composing children more XML-like 1`] = `
     </div>
   </div>
   <div>
-    <div>
+    <span
+      foo="bar"
+    >
       this is the body
-    </div>
+    </span>
   </div>
   <div>
     <div>
@@ -18,6 +57,20 @@ exports[`react-transclude makes composing children more XML-like 1`] = `
     </div>
   </div>
 </div>
+`;
+
+exports[`react-transclude sets a key prop so you can be lazy and just drop the array in 1`] = `
+Array [
+  <div>
+    first section
+  </div>,
+  <div>
+    second section
+  </div>,
+  <div>
+    third section
+  </div>,
+]
 `;
 
 exports[`react-transclude works with good old jsx props 1`] = `
