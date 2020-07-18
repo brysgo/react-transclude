@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/brysgo/react-transclude.svg?style=svg)](https://circleci.com/gh/brysgo/react-transclude) [![Greenkeeper badge](https://badges.greenkeeper.io/brysgo/react-transclude.svg)](https://greenkeeper.io/)
+![Test](https://github.com/brysgo/react-transclude/workflows/Test/badge.svg)
 
 # React Transclude
 
