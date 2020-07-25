@@ -1,6 +1,6 @@
 {
   "name": "react-transclude",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Angular like syntax sugar for passing JSX props",
   "main": "index.js",
   "repository": "https://github.com/brysgo/react-transclude",
